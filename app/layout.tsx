@@ -9,9 +9,11 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Code Snippets",
+  title: "CodeNeuron",
   description: "A collection of useful code snippets for your reference",
-  generator: "v0.dev",
+  icons : {
+    icon : "/code.png"
+  }
 }
 
 export default function RootLayout({
