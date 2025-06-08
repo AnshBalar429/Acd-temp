@@ -3,28 +3,28 @@
 import type { Snippet } from "./types"
 
 export const categories = [
-  "All",
-  "Data Structure",
-  "Graph",
-  "Tree",
-  "Math",
-  "String",
-  "Segment Tree",
-  "Lazy Propagation",
-  "Trie",
-  "Min Tree",
-  "Online queries",
-  "Seq Tree",
+    "All",
+    "Data Structure",
+    "Graph",
+    "Tree",
+    "Math",
+    "String",
+    "Segment Tree",
+    "Lazy Propagation",
+    "Trie",
+    "Min Tree",
+    "Online queries",
+    "Seq Tree",
 ]
 
 export const codeSnippets: Snippet[] = [
-  {
-    id: "1",
-    title: "Binary Lifting",
-    description: "Tree code for binary lifting.",
-    language: "C++",
-    tags: ["Tree", "Graph", "Math"],
-    code: `#include <bits/stdc++.h>
+    {
+        id: "1",
+        title: "Binary Lifting",
+        description: "Tree code for binary lifting.",
+        language: "C++",
+        tags: ["Tree", "Graph", "Math"],
+        code: `#include <bits/stdc++.h>
 // Code for finding K-th parent of any node 
 // dp[node][i] represents the 2^i-th parent of node
 constexpr int maxN = 2e5 + 7;
@@ -86,14 +86,14 @@ int main() {
     }
     return 0;
 }`,
-  },
-  {
-    id: "2",
-    title: "Trie",
-    description: "A simplt Trie with example main function.",
-    language: "C++",
-    tags: ["Trie", "String", "Data Structure"],
-    code: `#include <bits/stdc++.h>
+    },
+    {
+        id: "2",
+        title: "Trie",
+        description: "A simplt Trie with example main function.",
+        language: "C++",
+        tags: ["Trie", "String", "Data Structure"],
+        code: `#include <bits/stdc++.h>
 
 struct Node {
     Node *link[26];
@@ -184,14 +184,14 @@ int main() {
         std::cout << "NO" << std::endl;
     }
 }`,
-  },
-  {
-    id: "3",
-    title: "Generic Segment Tree",
-    description: "A segment tree template where minor changes required.",
-    language: "C++",
-    tags: ["Data Structure", "Segment Tree", "Tree"],
-    code: `#include <bits/stdc++.h>
+    },
+    {
+        id: "3",
+        title: "Generic Segment Tree",
+        description: "A segment tree template where minor changes required.",
+        language: "C++",
+        tags: ["Data Structure", "Segment Tree", "Tree"],
+        code: `#include <bits/stdc++.h>
 
 // Segment Tree with Point Updates and Range Queries
 // Supports multiple Segment Trees with just a change in the Node and Update
@@ -310,14 +310,14 @@ void dummyMain() {
     SegTree<Node1, Update1> segTree = SegTree<Node1, Update1>(n, arr);
     segTree.make_update(2,5);
 }`,
-  },
-  {
-    id: "4",
-    title: "Lazy Segment Tree",
-    description: "Range Update and Range Queries.",
-    language: "C++",
-    tags: ["Lazy Tree", "Data structure", "Segment Tree"],
-    code: `#include <bits/stdc++.h>
+    },
+    {
+        id: "4",
+        title: "Lazy Segment Tree",
+        description: "Range Update and Range Queries.",
+        language: "C++",
+        tags: ["Lazy Tree", "Data structure", "Segment Tree"],
+        code: `#include <bits/stdc++.h>
 
 // Lazy Segment Tree with Range Updates and Range Queries
 // Supports multiple Segment Trees with just a change in the Node and Update
@@ -490,14 +490,14 @@ int main() {
 
     return 0;
 }`,
-  },
-  {
-    id: "5",
-    title: "Sum Segment Tree",
-    description: "Simple sum tree for sum range queries.",
-    language: "C++",
-    tags: ["Seg Tree", "Tree", "Online queries"],
-    code: `#include <bits/stdc++.h>
+    },
+    {
+        id: "5",
+        title: "Sum Segment Tree",
+        description: "Simple sum tree for sum range queries.",
+        language: "C++",
+        tags: ["Seg Tree", "Tree", "Online queries"],
+        code: `#include <bits/stdc++.h>
 
 // Simple Segment tree for sum range queries.
 std::vector<int> segTree;
@@ -585,14 +585,14 @@ int main() {
 
     return 0;
 }`,
-  },
-  {
-    id: "6",
-    title: "Lazy Min Segment Tree",
-    description: "An example of Lazy Tree.",
-    language: "C++",
-    tags: ["Min Tree", "Lazy Propogation", "Tree"],
-    code: `#include <bits/stdc++.h>
+    },
+    {
+        id: "6",
+        title: "Lazy Min Segment Tree",
+        description: "An example of Lazy Tree.",
+        language: "C++",
+        tags: ["Min Tree", "Lazy Propogation", "Tree"],
+        code: `#include <bits/stdc++.h>
 
 // Lazy Segment Tree with Range Updates and Range Queries
 // Supports multiple Segment Trees with just a change in the Node and Update
@@ -767,14 +767,14 @@ int main() {
 
     return 0;
 }`,
-  },
-  {
-    id: "7",
-    title: "Modular Int",
-    description: "mint class for modular arithmetic.",
-    language: "C++",
-    tags: ["Number Theory", "Modular Arithmatic", "Math"],
-    code : `#include <bits/stdc++.h>
+    },
+    {
+        id: "7",
+        title: "Modular Int",
+        description: "mint class for modular arithmetic.",
+        language: "C++",
+        tags: ["Number Theory", "Modular Arithmatic", "Math"],
+        code: `#include <bits/stdc++.h>
 
 const int mod = 998244353; //Change to mod value based on task
 
@@ -909,29 +909,62 @@ int main() {
     std::cout << mult << '\n';
     std::cout << pow << '\n';
 }`
+    },
+    {
+        "id": "8",
+        "title": "Sparse Table",
+        "description": "Sparse Table for Range Query in O(1)",
+        "language": "C++",
+        "tags": ["Data Structure", "Online queries", "Math"],
+        "code": `#include <bits/stdc++.h>
 
-  }
+struct SparseTable {
+    int n, LOG;
+    std::vector<std::vector<int> > table;
+
+    static int merge(int x, int y) {
+        return std::min(x, y);
+    }
+
+    explicit SparseTable(const std::vector<int> &a) : n(size(a)), LOG(std::__lg(n)),
+                                                      table(n, std::vector<int>(LOG + 1, -1)) {
+        for (int j = 0; j <= LOG; j++) {
+            for (int i = 0; i + (1 << j) <= n; i++) {
+                if (j == 0)
+                    table[i][j] = a[i];
+                else
+                    table[i][j] = merge(table[i][j - 1], table[i + (1 << (j - 1))][j - 1]);
+            }
+        }
+    }
+
+    int query(int l, int r) {
+        int j = std::__lg(r - l + 1);
+        return merge(table[l][j], table[r - (1 << j) + 1][j]);
+    }
+};`
+    }
 ]
 
 export function getSnippets() {
-  return codeSnippets
+    return codeSnippets
 }
 
 export function getSnippetById(id: string) {
-  return codeSnippets.find((snippet) => snippet.id === id)
+    return codeSnippets.find((snippet) => snippet.id === id)
 }
 
 export function getSnippetsByTag(tag: string) {
-  return codeSnippets.filter((snippet) => snippet.tags.includes(tag))
+    return codeSnippets.filter((snippet) => snippet.tags.includes(tag))
 }
 
 export function searchSnippets(query: string) {
-  const lowercaseQuery = query.toLowerCase()
-  return codeSnippets.filter(
-    (snippet) =>
-      snippet.title.toLowerCase().includes(lowercaseQuery) ||
-      snippet.description.toLowerCase().includes(lowercaseQuery) ||
-      snippet.tags.some((tag) => tag.toLowerCase().includes(lowercaseQuery)),
-  )
+    const lowercaseQuery = query.toLowerCase()
+    return codeSnippets.filter(
+        (snippet) =>
+            snippet.title.toLowerCase().includes(lowercaseQuery) ||
+            snippet.description.toLowerCase().includes(lowercaseQuery) ||
+            snippet.tags.some((tag) => tag.toLowerCase().includes(lowercaseQuery)),
+    )
 }
 
